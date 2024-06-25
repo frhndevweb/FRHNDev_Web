@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FTHNDev Web</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+     body {
+            font-family: 'Pacifico', Display;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1000; 
+            top: 0;
+        }
+  
+        .logo img {
+            width: 80px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ddd;
+        }
+
+        section {
+            padding: 40px 20px;
+            margin: 20px 0;
+        }
+
+        #home {
+            background: url('https://github.com/frhndevweb/FRHNDev_Web/blob/master/Premium%20Photo%20_%20Modern%20futuristic%20fantasy%20night%20landscape%20with%20abstract%20islands%20and%20night%20sky%20with%20space%20galaxies.jpeg?raw=true')
+            no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: auto;
+            position: relative;
+            margin-top: 80px;
+            font
+        }
+
+        #about {
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        #medsos {
+            text-align: center;
+        }
+
+        .medsos-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .medsos {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 10px;
+            flex: 1 1 calc(33% - 40px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .medsos:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        #contact {
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #555;
+        }
+
+         footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hamburger-menu {
+            display: none; /* Sembunyikan hamburger menu pada awalnya */
+            cursor: pointer;
+        }
+
+        .line {
+            width: 40px;
+            height: 3px;
+            background-color: #fff;
+            margin: 2px;
+            transition: transform 0.3s;
+        }
+
+        .hamburger-open .line:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger-open .line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-open .line:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            z-index: 1000; /* Tambahkan ini agar nav-links berada di atas elemen lainnya */
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #ddd;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block;
+            }
+
+            .nav-links {
+                display: none; /* Sembunyikan navigasi utama pada layar kecil */
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 60px; /* Adjust this based on your header height */
+                right: 0;
+                width: 200px;
+                padding: 20px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .nav-links li a {
+                font-size: 18px;
+            }
+
+            .hamburger-open .nav-links {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://github.com/frhndevweb/webstore/blob/master/IMG_20240529_181716.png?raw=true" alt="Logo" class="logo">
+        </div>
+        <nav>
+            <div class="hamburger-menu">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#BA-A">Bukan Apa-apa</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home">
+        <h1>Welcome to FRHNDev Web</h1>
+        <p>Web Developer Pemula</p>
+    </section>
+    <section id="about">
+        <h2>Tentang</h2>
+        <p>We are a digital agency specializing in web development and webstore</p>
+    </section>
+    <section id="medsos">
+        <h2>Bukan apa-apa</h2>
+        <div class="medsos-container">
+            <div class="medsos">
+                <h3>Instagram</h3>
+                <p>ikuti Saya di <a href="https://instagram.com/hannaaffiii" target="_blank">Instagram</a> untuk info lebih lanjut tentang Saya</p>
+            </div>
+            <div class="medsos">
+                <h3>WhatsApp</h3>
+                <p>info lebih lanjut bisa klik link <a href="https://wa.me/+6288215660319" target="_blank">ini</a></p>
+            </div>
+            <div class="medsos">
+                <h3>Github</h3>
+                <p>untuk mempublish hasil proyek saya, saya menggunakan <a href="https://www.github.com" target="_blank">Github</a> untuk mempublish web yang saya buat (gratis njir). dan ini profile saya di <a href="https://www.github.com/frhndevweb" target="_blank">Github</a></a></p>
+            </div>
+            <div class="medsos">
+              <h3>Webstore</h3>
+              <p>jika anda ingin sekali membuat website anda sendiri, anda bisa klik <a href="https://frhndevweb.github.io/webstore/" target="_blank">ini</a></p>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 FRHNDevWeb</p>
+    </footer>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for contacting us, ' + document.getElementById('name').value + '!');
+        });
+
+        document.querySelector('.hamburger-menu').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('hamburger-open');
+        });
+    </script>
+</body>
+</html>
